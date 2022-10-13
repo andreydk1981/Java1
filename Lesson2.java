@@ -14,6 +14,12 @@ public class Lesson2 {
 
     }
 
+    /**
+     * проверка входил ли сумма в интервал
+     * @param a
+     * @param b
+     * @return
+     */
     private static boolean tesmSumm(int a, int b) {
         if (a + b < 10 || a + b > 20) return false;
         else return true;
