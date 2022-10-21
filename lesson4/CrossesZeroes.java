@@ -197,8 +197,6 @@ public class CrossesZeroes {
 
     public static void main(String[] args) {
         playGame();
-
-
     }
 }
 
