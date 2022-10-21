@@ -1,17 +1,21 @@
 package org.example.lesson4;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class CrossesZeroes {
-    public static Scanner input = new Scanner(System.in);
-    public static char[][] map;
-    public static int size = 0;
     public static final int AI = 0;
     public static final int HUMAN = 1;
     public static final char DOT_X = 'X';
     public static final char DOT_0 = '0';
     public static final char DOT_EMPTY = '*';
+    public static Scanner input = new Scanner(System.in);
+    public static char[][] map;
+    public static int[] lineMap;
+
+    public static int[] blockCoordinates;
+    public static int size = 0;
 
     public static int mapSizeEnter() {
         System.out.println("Input map size: ");
@@ -21,6 +25,7 @@ public class CrossesZeroes {
     public static void initMap() {
         size = mapSizeEnter();
         map = new char[size][size];
+        lineMap = new int[size];
         for (int x = 0; x < size; x++) {
             for (int y = 0; y < size; y++) {
                 map[y][x] = DOT_EMPTY;
@@ -75,14 +80,80 @@ public class CrossesZeroes {
         System.out.printf("x = %d, y = %d\n", x + 1, y + 1);
         map[y][x] = DOT_X;
     }
+
+    public static boolean searchLinesToBlock() {
+        int maxCont = size / 2 + 1;
+        int count = 0;
+        Arrays.fill(lineMap, 0);
+        blockCoordinates = new int[2];
+        // horizontal
+        for (int y = 0; y < size; y++) {
+            blockCoordinates[1] = y;
+            for (int x = 0; x < size; x++) { // find line
+                if (map[y][x] == DOT_X) {
+                    lineMap[x] = 1;
+                    count++;
+                }
+                if (map[y][x] == DOT_0) {
+                    lineMap[x] = 2;
+                }
+            }
+            //System.out.print("count = " + count);
+            //System.out.println(Arrays.toString(lineMap));
+            if (count >= maxCont) {
+                for (int i = 0; i < size; i++) { // find free dot to block
+                    if (lineMap[i] == 0) {
+                        blockCoordinates[0] = i;
+                        return true;
+                    }
+                }
+            }
+            count = 0;
+            Arrays.fill(lineMap, 0);
+        }
+        // vertical
+        for (int x = 0; x < size; x++) {
+            blockCoordinates[0] = x;
+            for (int y = 0; y < size; y++) { // find line
+                if (map[y][x] == DOT_X) {
+                    lineMap[y] = 1;
+                    count++;
+                }
+                if (map[y][x] == DOT_0) {
+                    lineMap[y] = 2;
+                }
+            }
+            //System.out.print("count = " + count);
+            //System.out.println(Arrays.toString(lineMap));
+            if (count >= maxCont) {
+                for (int i = 0; i < size; i++) { // find free dot to block
+                    if (lineMap[i] == 0) {
+                        blockCoordinates[1] = i;
+                        return true;
+                    }
+                }
+            }
+            count = 0;
+            Arrays.fill(lineMap, 0);
+        }
+
+        return false;
+    }
+
     public static void aiTurn() {
         System.out.println("Computer turn:");
+
         Random rnd = new Random();
         int x, y;
-        do {
-            x = rnd.nextInt(size);
-            y = rnd.nextInt(size);
-        } while (!inputOk(x, y, AI));
+        if (searchLinesToBlock()) {
+            System.out.printf("BLOCK! in x=%d y=%d\n", blockCoordinates[0] + 1, blockCoordinates[1] + 1);
+            x = blockCoordinates[0];
+            y = blockCoordinates[1];
+        } else
+            do {
+                x = rnd.nextInt(size);
+                y = rnd.nextInt(size);
+            } while (!inputOk(x, y, AI));
         System.out.printf("x = %d, y = %d\n", x + 1, y + 1);
         map[y][x] = DOT_0;
     }
