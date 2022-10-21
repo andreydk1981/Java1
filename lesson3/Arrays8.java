@@ -26,6 +26,11 @@ public class Arrays8 {
         System.out.println(Arrays.toString(arr1));
     }
 
+    /**
+     *
+     * @param arr
+     * @param n
+     */
     public static void mooveArr(int arr[], int n) {
         int temp;
         if (n >= 0) {
