@@ -75,7 +75,6 @@ public class CrossesZeroes {
         System.out.printf("x = %d, y = %d\n", x + 1, y + 1);
         map[y][x] = DOT_X;
     }
-
     public static void aiTurn() {
         System.out.println("Computer turn:");
         Random rnd = new Random();
