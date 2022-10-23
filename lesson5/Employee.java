@@ -14,7 +14,7 @@ public class Employee {
     private Float salary;
     private int age;
 
-    public Employee(String fullName, String jobTitle, String email, String phoneNumber, Float salary, int age) {
+    private Employee(String fullName, String jobTitle, String email, String phoneNumber, Float salary, int age) {
         super();
         this.fullName = fullName;
         this.jobTitle = jobTitle;
@@ -24,7 +24,7 @@ public class Employee {
         this.age = age;
     }
 
-    public Employee(){
+    public Employee() {
         Random rnd = new Random();
         this.fullName = "Unknown";
         this.jobTitle = "Unknown";
@@ -86,11 +86,15 @@ public class Employee {
     public void info() {
         System.out.println(
                 "fullName='" + fullName + '\'' +
-                ", jobTitle='" + jobTitle + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", salary=" + salary +
-                ", age=" + age +
-                '}');
+                        ", jobTitle='" + jobTitle + '\'' +
+                        ", email='" + email + '\'' +
+                        ", phoneNumber='" + phoneNumber + '\'' +
+                        ", salary=" + salary +
+                        ", age=" + age +
+                        '}');
+    }
+
+    public boolean checkAge(int ageNeeded) {
+        return this.age >= ageNeeded;
     }
 }
