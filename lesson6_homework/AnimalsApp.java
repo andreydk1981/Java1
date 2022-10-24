@@ -23,7 +23,7 @@ public class AnimalsApp {
         newDog3.swim(600);
         newDog4.swim(10);
         newDog4.swim(5);
-
+        newCat2.printRunResult("www",44,"rrrr",566,6777);
         NewAnimal animal = new NewCat("Animal Cat");
         animal.run(89);
         ((NewCat)animal).voice();
