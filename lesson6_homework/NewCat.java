@@ -1,6 +1,6 @@
 package org.example.lesson6_homework;
 
-public class NewCat extends Animal {
+public class NewCat extends NewAnimal {
     private static int count = 1;
     private final int RUNLIMIT = 200;
     private int catNum;
