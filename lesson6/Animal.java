@@ -15,7 +15,7 @@ public class Animal {
         this.name = name;
     }
 
-    public void voice(){
+    public void voice() {
         System.out.println("Animal speak something");
     }
 }
