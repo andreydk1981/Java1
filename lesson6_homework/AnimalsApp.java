@@ -8,10 +8,10 @@ public class AnimalsApp {
         NewCat newCat4 = new NewCat("BArsik");
         NewCat newCat5 = new NewCat("Tom");
         NewDog newDog1 = new NewDog("Muhtar");
-        NewDog newDog2 = new NewDog("Muhtar");
-        NewDog newDog3 = new NewDog("Muhtar");
-        NewDog newDog4 = new NewDog("Muhtar");
-        newCat.swim(10);
+        NewDog newDog2 = new NewDog("RAM");
+        NewDog newDog3 = new NewDog("Dina");
+        NewDog newDog4 = new NewDog("Star");
+        newCat.swim(-10);
         newCat5.swim(10);
         newCat2.run(100);
         newCat2.voice();

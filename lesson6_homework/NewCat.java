@@ -3,6 +3,7 @@ package org.example.lesson6_homework;
 public class NewCat extends NewAnimal {
     private static int count = 1;
     private final int RUNLIMIT = 200;
+    private static final int SWIMLIMIT = 0;
     private int catNum;
     public NewCat(String name) {
         super(name);
@@ -11,15 +12,13 @@ public class NewCat extends NewAnimal {
 
     @Override
     public void run(int length) {
-        if (length <= RUNLIMIT) {
-            System.out.println("Cat #"+ catNum + " "+ name + " runs "+ length);
-        } else System.out.println("Cat #"+ catNum + " "+ name + " cant run "+ length + " limit(" + RUNLIMIT +")");
+        printRunResult("Cat", catNum,name,length,RUNLIMIT);
 
     }
 
     @Override
     public void swim(int length) {
-        System.out.println("Cat #"+ catNum + " "+ name + " I cant swim...");
+        printSwimResult("Cat", catNum,name,length,SWIMLIMIT);
 
     }
 
