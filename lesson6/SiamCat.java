@@ -8,16 +8,16 @@ public class SiamCat extends Cat{
         this.shapesOfGray = shapesOfGray;
     }
 
-    public int getShapesOfGray() {
+    protected int getShapesOfGray() {
         return shapesOfGray;
     }
 
-    public void setShapesOfGray(int shapesOfGray) {
+    protected void setShapesOfGray(int shapesOfGray) {
         this.shapesOfGray = shapesOfGray;
     }
 
     @Override
-    public void voice() {
+    protected void voice() {
         System.out.println("LOUD MIAU");
     }
 }

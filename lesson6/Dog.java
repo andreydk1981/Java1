@@ -8,11 +8,11 @@ public class Dog extends Animal{
         this.breed = breed;
     }
 
-    public String getBreed() {
+    protected String getBreed() {
         return breed;
     }
 
-    public void setBreed(String breed) {
+    protected void setBreed(String breed) {
         this.breed = breed;
     }
 }

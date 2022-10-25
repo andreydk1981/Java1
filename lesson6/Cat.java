@@ -8,16 +8,16 @@ public class Cat extends Animal {
         this.color = color;
     }
 
-    public String getColor() {
+    protected String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    protected void setColor(String color) {
         this.color = color;
     }
 
     @Override
-    public void voice() {
+    protected void voice() {
         System.out.println("Miaaaauuuuu");
     }
 }
