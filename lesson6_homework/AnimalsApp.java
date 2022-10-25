@@ -1,6 +1,7 @@
 package org.example.lesson6_homework;
 
 public class AnimalsApp {
+
     public static void main(String[] args) {
         NewCat newCat = new NewCat("Murzik");
         NewCat newCat2 = new NewCat("Kotik");

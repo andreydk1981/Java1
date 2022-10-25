@@ -1,11 +1,11 @@
 package org.example.lesson6_homework;
 
-class Cat extends Animal {
+class NewCat extends NewAnimal {
     private static int count = 1;
     private final int RUNLIMIT = 200;
     private static final int SWIMLIMIT = 0;
     private int catNum;
-    public Cat(String name) {
+    public NewCat(String name) {
         super(name);
         catNum = this.count++;
     }

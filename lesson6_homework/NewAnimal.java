@@ -1,9 +1,9 @@
 package org.example.lesson6_homework;
 
-public abstract class Animal {
+public abstract class NewAnimal {
     protected String name;
 
-    public Animal(String name) {
+    public NewAnimal(String name) {
         this.name = name;
     }
 
