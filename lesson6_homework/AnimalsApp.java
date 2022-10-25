@@ -2,15 +2,15 @@ package org.example.lesson6_homework;
 
 public class AnimalsApp {
     public static void main(String[] args) {
-        Cat newCat = new Cat("Murzik");
-        Cat newCat2 = new Cat("Kotik");
-        Cat newCat3 = new Cat("Vasya");
-        Cat newCat4 = new Cat("BArsik");
-        Cat newCat5 = new Cat("Tom");
-        Dog newDog1 = new Dog("Muhtar");
-        Dog newDog2 = new Dog("RAM");
-        Dog newDog3 = new Dog("Dina");
-        Dog newDog4 = new Dog("Star");
+        NewCat newCat = new NewCat("Murzik");
+        NewCat newCat2 = new NewCat("Kotik");
+        NewCat newCat3 = new NewCat("Vasya");
+        NewCat newCat4 = new NewCat("BArsik");
+        NewCat newCat5 = new NewCat("Tom");
+        NewDog newDog1 = new NewDog("Muhtar");
+        NewDog newDog2 = new NewDog("RAM");
+        NewDog newDog3 = new NewDog("Dina");
+        NewDog newDog4 = new NewDog("Star");
         newCat.swim(-10);
         newCat5.swim(10);
         newCat2.run(100);
@@ -24,9 +24,8 @@ public class AnimalsApp {
         newDog4.swim(10);
         newDog4.swim(5);
 
-        Animal animal = new Cat("Animal Cat");
-        
+        NewAnimal animal = new NewCat("Animal Cat");
         animal.run(89);
-        ((Cat)animal).voice();
+        ((NewCat)animal).voice();
     }
 }
